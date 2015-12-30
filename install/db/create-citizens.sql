@@ -38,11 +38,11 @@ CREATE TABLE nationality(
 WITH ( OIDS=FALSE );
 ALTER TABLE nationality OWNER TO postgres;
 
-INSERT INTO nationality (nationality, language_id, incipience) VALUES ('русские', 'IX век');
-INSERT INTO nationality (nationality, language_id, incipience) VALUES ('татары', 'VI век');
-INSERT INTO nationality (nationality, language_id, incipience) VALUES ('украинцы', 'IX век');
-INSERT INTO nationality (nationality, language_id, incipience) VALUES ('армяне', 'XIII век');
-INSERT INTO nationality (nationality, language_id, incipience) VALUES ('молдаване', 'XIV век');
+INSERT INTO nationality (nationality, incipience) VALUES ('русские', 'IX век');
+INSERT INTO nationality (nationality, incipience) VALUES ('татары', 'VI век');
+INSERT INTO nationality (nationality, incipience) VALUES ('украинцы', 'IX век');
+INSERT INTO nationality (nationality, incipience) VALUES ('армяне', 'XIII век');
+INSERT INTO nationality (nationality, incipience) VALUES ('молдаване', 'XIV век');
 
 ----------------------------------------------------
 -- Table: languages
@@ -53,25 +53,25 @@ ALTER SEQUENCE auto_language_id OWNER TO postgres;
 
 CREATE TABLE languages(
 	id integer NOT NULL DEFAULT nextval(auto_language_id),
-	lang varchar(32)
+	language varchar(32)
 )
 
 WITH ( OIDS=FALSE );
 ALTER TABLE languages OWNER TO postgres;
 
-INSERT INTO languages (lang) VALUES ('русский');
-INSERT INTO languages (lang) VALUES ('татарский');
-INSERT INTO languages (lang) VALUES ('украинский');
-INSERT INTO languages (lang) VALUES ('армянский');
-INSERT INTO languages (lang) VALUES ('молдавский');
+INSERT INTO languages (language) VALUES ('русский');
+INSERT INTO languages (language) VALUES ('татарский');
+INSERT INTO languages (language) VALUES ('украинский');
+INSERT INTO languages (language) VALUES ('армянский');
+INSERT INTO languages (language) VALUES ('молдавский');
 
 ----------------------------------------------------
 -- Table: national_languages
 ----------------------------------------------------
 
 CREATE TABLE national_languages(
-	nationality_id integer,
-	lang_id integer	
+	nationality_id integer REFERENCES nationality,
+	langugage_id integer REFERENCES languages	
 )
 
 WITH ( OIDS=FALSE );
