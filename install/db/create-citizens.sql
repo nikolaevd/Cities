@@ -70,13 +70,18 @@ INSERT INTO languages (language) VALUES ('молдавский');
 ----------------------------------------------------
 
 CREATE TABLE national_languages(
-	nationality_id integer REFERENCES nationality,
-	langugage_id integer REFERENCES languages	
+	nationality_id integer,
+	language_id integer,
+	CONSTRAINT key_nationality_id FOREIGN KEY (nationality_id)
+		REFERENCES nationality (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION,
+	CONSTRAINT key_language_id FOREIGN KEY (language_id)
+		REFERENCES language (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 
 WITH ( OIDS=FALSE );
 ALTER TABLE national_languages OWNER TO postgres;
 
+-- ID берем из последовательности!!!
 INSERT INTO national_languages (nationality_id, lang_id) VALUES (0, 0);
 INSERT INTO national_languages (nationality_id, lang_id) VALUES (1, 0);
 INSERT INTO national_languages (nationality_id, lang_id) VALUES (1, 1);
@@ -92,14 +97,19 @@ INSERT INTO national_languages (nationality_id, lang_id) VALUES (4, 4);
 ----------------------------------------------------
 
 CREATE TABLE population(
-	nationality_id integer REFERENCES nationality,
-	city_id integer REFERENCES cities,
-	population integer
+	nationality_id integer,
+	city_id integer,
+	population integer,
+	CONSTRAINT key_nationality_id FOREIGN KEY (nationality_id)
+		REFERENCES nationality (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION,
+	CONSTRAINT key_city_id FOREIGN KEY (city_id)
+		REFERENCES cities (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION,
 )
 
 WITH ( OIDS=FALSE );
 ALTER TABLE operations OWNER TO postgres;
 
+-- ID берем из последовательности!!!
 INSERT INTO population (nationality_id, city_id, population) VALUES (0, 0, 9930410);
 INSERT INTO population (nationality_id, city_id, population) VALUES (1, 0, 149043);
 INSERT INTO population (nationality_id, city_id, population) VALUES (2, 0, 154104);
