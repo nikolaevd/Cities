@@ -4,7 +4,7 @@
 
 CREATE TABLE cities(
 	id integer NOT NULL,
-	name varchar(32) NOT NULL,
+	city varchar(32) NOT NULL,
 	year integer,
 	area integer,
 	CONSTRAINT key_cities PRIMARY KEY (id)
@@ -12,10 +12,10 @@ CREATE TABLE cities(
 WITH ( OIDS=FALSE );
 ALTER TABLE cities OWNER TO postgres;
 
-INSERT INTO cities (id, name, year, area) VALUES (0, 'Москва', 1147, 2561);
-INSERT INTO cities (id, name, year, area) VALUES (1, 'Санкт-Петербург', 1703, 1439);
-INSERT INTO cities (id, name, year, area) VALUES (2, 'Екатеринбург', 1723, 487);
-INSERT INTO cities (id, name, year, area) VALUES (3, 'Самара', 1586, 541);
+INSERT INTO cities (id, city, year, area) VALUES (0, 'Москва', 1147, 2561);
+INSERT INTO cities (id, city, year, area) VALUES (1, 'Санкт-Петербург', 1703, 1439);
+INSERT INTO cities (id, city, year, area) VALUES (2, 'Екатеринбург', 1723, 487);
+INSERT INTO cities (id, city, year, area) VALUES (3, 'Самара', 1586, 541);
 
 ----------------------------------------------------
 -- Table: nationality
@@ -24,17 +24,17 @@ INSERT INTO cities (id, name, year, area) VALUES (3, 'Самара', 1586, 541);
 CREATE TABLE nationality(
 	id integer NOT NULL,
 	nationality varchar(32),
-	incipience varchar(32),
+	incipience int,
 	CONSTRAINT key_nationality PRIMARY KEY (id)
 )
 WITH ( OIDS=FALSE );
 ALTER TABLE nationality OWNER TO postgres;
 
-INSERT INTO nationality (id, nationality, incipience) VALUES (0, 'русские', 'IX век');
-INSERT INTO nationality (id, nationality, incipience) VALUES (1, 'татары', 'VI век');
-INSERT INTO nationality (id, nationality, incipience) VALUES (2, 'украинцы', 'IX век');
-INSERT INTO nationality (id, nationality, incipience) VALUES (3, 'армяне', 'XIII век');
-INSERT INTO nationality (id, nationality, incipience) VALUES (4, 'молдаване', 'XIV век');
+INSERT INTO nationality (id, nationality, incipience) VALUES (0, 'русские', '9');
+INSERT INTO nationality (id, nationality, incipience) VALUES (1, 'татары', '6');
+INSERT INTO nationality (id, nationality, incipience) VALUES (2, 'украинцы', '9');
+INSERT INTO nationality (id, nationality, incipience) VALUES (3, 'армяне', '13');
+INSERT INTO nationality (id, nationality, incipience) VALUES (4, 'молдаване', '14');
 
 ----------------------------------------------------
 -- Table: languages
