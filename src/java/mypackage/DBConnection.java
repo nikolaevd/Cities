@@ -1,5 +1,5 @@
 
-package citizens;
+package mypackage;
 
 import java.sql.*;
 
