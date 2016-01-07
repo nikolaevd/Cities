@@ -1,7 +1,6 @@
 import java.sql.*;
 
 public class Driver {
-    //static final String JDBC_DRIVER = "com.postgresql.jdbc.driver";  
     static final String DB_URL = "jdbc:postgresql://localhost:5432/cities";
     static final String USER = "postgres";
     static final String PASS = "Iqex1234";
