@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Main Page</title>
+        <title>Get Data</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div>
-            <form action="123" method="GET">
+            <form action="result.jsp" method="GET">
                 <p><b>Вывести информацию о жителях заданного города,
                         говорящих на заданном языке:</b></p>
                 <input type="text" placeholder="Город" name="city"/>
