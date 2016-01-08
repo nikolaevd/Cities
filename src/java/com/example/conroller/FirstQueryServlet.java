@@ -17,8 +17,8 @@ public class FirstQueryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        FirstQuery firstQuery = new FirstQuery();
-        List result = firstQuery.getData(request.getParameter("city"), request.getParameter("language"));
+        //FirstQuery firstQuery = new FirstQuery();
+        List result = FirstQuery.getData(request.getParameter("city"), request.getParameter("language"));
         
         request.setAttribute("styles", result);
         RequestDispatcher view = request.getRequestDispatcher("result.jsp");

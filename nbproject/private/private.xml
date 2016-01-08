@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Git/Cities/web/jsp/set_data.jsp</file>
+            <file>file:/C:/Git/Cities/web/get_data.jsp</file>
+            <file>file:/C:/Git/Cities/src/java/com/example/model/FirstQuery.java</file>
+            <file>file:/C:/Git/Cities/web/result.jsp</file>
             <file>file:/C:/Git/Cities/web/index.html</file>
-            <file>file:/C:/Git/Cities/web/jsp/get_data.jsp</file>
-            <file>file:/C:/Git/Cities/src/java/Driver.java</file>
+            <file>file:/C:/Git/Cities/src/java/com/example/conroller/FirstQueryServlet.java</file>
         </group>
     </open-files>
 </project-private>

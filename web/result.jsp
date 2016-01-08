@@ -1,19 +1,20 @@
-<%@page import="mypackage.CitiesDB, java.sql.* "%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page import="java.util.*" %>
+<%@ page import="com.example.model.FirstData" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Result</title>
-    </head>
     <body>
-        <h1>Hello World!</h1>
-        <% ResultSet rs = new CitiesDB().start(request.getParameter("city"), request.getParameter("language")); 
-        while(rs.next()){
-            rs.getString("city");
-            rs.getString("nationality");
-            rs.getInt("population");
-            rs.getString("language");
-        }%>
+        <h1 align="center">Final Data JSP View</h1>
+        <p>
+        <%
+
+        List<FirstData> styles = (List<FirstData>) request.getAttribute("styles");
+        if(styles!=null){
+            for(FirstData data : styles){  
+                out.println("<br/>" + data.getCity()+ " " + data.getLanguage()+ " " + data.getNationality() + " " + data.getPopulation());  
+            }  
+        } 
+        %>
+        </p>
     </body>
 </html>

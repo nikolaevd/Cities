@@ -1,21 +1,25 @@
 package com.example.model;
 
 import java.util.List;
-import java.sql.*;
 import java.util.ArrayList;
+import java.sql.*;
 
 public class FirstQuery{
     
-    public List<FirstData> getData(String city, String language){
+    static final String DB_URL = "jdbc:postgresql://localhost:5432/cities";
+    static final String USER = "postgres";
+    static final String PASS = "Iqex1234";
+    
+    public static List<FirstData> getData(String city, String language){
         Connection connection = null;
-        String sql = null;
+        Statement statement = null;
         ResultSet resultSet = null;
         List<FirstData> dataList = new ArrayList<>();
          
         try{
             connection = CitiesDB.getConnection();
             
-            sql = "SELECT c.city, n.nationality, p.population, l.language\n" +
+            String sql = "SELECT c.city, n.nationality, p.population, l.language\n" +
             "FROM nationality n\n" +
                 "JOIN population p ON n.id = p.nationality_id\n" +
                 "JOIN cities c ON c.id = p.city_id\n" +
@@ -23,7 +27,8 @@ public class FirstQuery{
                 "JOIN languages l ON l.id = nl.language_id\n" +
             "WHERE c.city = '" + city + "' AND l.language = '" + language + "'";
             
-            resultSet = connection.createStatement().executeQuery(sql);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
             
             while(resultSet.next()){
                 FirstData data = new FirstData();
@@ -35,6 +40,7 @@ public class FirstQuery{
             }
             
             resultSet.close();
+            statement.close();
             connection.close();
             
         }
