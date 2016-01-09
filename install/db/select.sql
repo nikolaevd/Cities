@@ -24,11 +24,12 @@ WHERE n.nationality = 'украинцы'
 -- вывести информацию о городе с заданным количеством населения и всех типах жителей
 --------------------------------------------------------------------------------------------
 
-SELECT c.city, c.year, c.area, n.nationality, p.population
-FROM cities c
-	JOIN population p ON c.id = p.city_id
+SELECT c.city, c.year, c.area, SUM(p.population) 
+FROM population p
 	JOIN nationality n ON n.id = p.nationality_id
-WHERE p.population > 100000
+	JOIN cities c ON c.id = p.city_id
+GROUP BY c.city, c.year, c.area
+	HAVING SUM(p.population) > 10000000
 
 --------------------------------------------------------------------------------------------
 -- вывести информацию о самой древней народности (национальности)
