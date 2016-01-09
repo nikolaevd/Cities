@@ -11,23 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-public class FirstQueryServlet extends HttpServlet {
+public class FirstQueryHandler extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        //FirstQuery firstQuery = new FirstQuery();
-        request.setCharacterEncoding("UTF-8"); 
-        
-        List result = FirstQuery.getData(request.getParameter("city"), request.getParameter("language"));
-        
-        request.setAttribute("styles", result);
-        RequestDispatcher view = request.getRequestDispatcher("result.jsp");
-        view.forward(request, response); 
-        
-    }
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,7 +22,7 @@ public class FirstQueryServlet extends HttpServlet {
         
         List result = FirstQuery.getData(request.getParameter("city"), request.getParameter("language"));
         
-        request.setAttribute("styles", result);
+        request.setAttribute("first", result);
         RequestDispatcher view = request.getRequestDispatcher("result.jsp");
         view.forward(request, response); 
         

@@ -1,7 +1,7 @@
 
 package com.example.model;
 
-public class FirstData {
+public class FirstObj {
     
     private String city;
     private String nationality;

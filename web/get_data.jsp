@@ -8,26 +8,26 @@
     </head>
     <body>
         <div>
-            <form action="FirstQueryServlet" method="POST">
+            <form action="FirstQueryHandler" method="POST">
                 <p><b>Вывести информацию о жителях заданного города,
                         говорящих на заданном языке:</b></p>
                 <input type="text" placeholder="Город" name="city"/>
                 <input type="text" placeholder="язык" name="language"/>
                 <input type="submit" value="Запрос"/>
             </form>
-            <form action="234" method="GET">
+            <form action="SecondQueryHandler" method="POST">
                 <p><b>Вывести информайию обо всех городах, в которых проживают
                         жители заданной национальности:</b></p>
                 <input type="text" placeholder="национальность" name="nationality"/>
                 <input type="submit" value="Запрос"/>
             </form>
-            <form>
+            <form action="ThirdQueryHandler" method="POST">
                 <p><b>Вывести информацию о городах с количеством наеления не менее заданного
                         и, всех проживающих национальностях:</b></p>
                 <input type="text" placeholder="количество населения" name="population"/>
                 <input type="submit" value="Запрос"/>
             </form>
-            <form>
+            <form action="FourthQueryHandler" method="POST">
                 <p><b>Вывести информацию о самой древней национальности,
                         проживающей на территории заданного города:</b></p>
                 <input type="text" placeholder="Город" name="city"/>

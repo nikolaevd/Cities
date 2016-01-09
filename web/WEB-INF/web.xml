@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>FirstQueryServlet</servlet-name>
-        <servlet-class>com.example.conroller.FirstQueryServlet</servlet-class>
+        <servlet-name>FirstQueryHandler</servlet-name>
+        <servlet-class>com.example.conroller.FirstQueryHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SecondQueryHandler</servlet-name>
+        <servlet-class>com.example.conroller.SecondQueryHandler</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FirstQueryServlet</servlet-name>
-        <url-pattern>/FirstQueryServlet</url-pattern>
+        <servlet-name>FirstQueryHandler</servlet-name>
+        <url-pattern>/FirstQueryHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecondQueryHandler</servlet-name>
+        <url-pattern>/SecondQueryHandler</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
