@@ -21,10 +21,10 @@ FROM cities c
 WHERE n.nationality = 'украинцы'
 	
 --------------------------------------------------------------------------------------------
--- вывести информацию о городе с заданным количеством населения и всех типах жителей
+-- вывести информацию о городах с количеством населения не менее заданного
 --------------------------------------------------------------------------------------------
 
-SELECT c.city, c.year, c.area, SUM(p.population) 
+SELECT c.city, c.year, c.area, SUM(p.population) as population
 FROM population p
 	JOIN nationality n ON n.id = p.nationality_id
 	JOIN cities c ON c.id = p.city_id
@@ -32,9 +32,11 @@ GROUP BY c.city, c.year, c.area
 	HAVING SUM(p.population) > 10000000
 
 --------------------------------------------------------------------------------------------
--- вывести информацию о самой древней народности (национальности)
+-- вывести информацию о самой древней народности, проживающей на территории заданного города
 --------------------------------------------------------------------------------------------
 
 SELECT n.nationality, n.incipience
 FROM nationality n
-WHERE n.incipience = (SELECT MIN(n.incipience) FROM nationality n)
+	JOIN population p ON n.id = p.nationality_id
+	JOIN cities c ON c.id = p.city_id
+WHERE n.incipience = (SELECT MIN(n.incipience) FROM nationality n) AND c.city = 'Санкт-Петербург' 

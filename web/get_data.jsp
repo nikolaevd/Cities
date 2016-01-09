@@ -22,13 +22,13 @@
                 <input type="submit" value="Запрос"/>
             </form>
             <form action="ThirdQueryHandler" method="POST">
-                <p><b>Вывести информацию о городах с количеством наеления не менее заданного
-                        и, всех проживающих национальностях:</b></p>
+                <p><b>Вывести информацию о городах с количеством наеления 
+                        не менее заданного:</b></p>
                 <input type="text" placeholder="количество населения" name="population"/>
                 <input type="submit" value="Запрос"/>
             </form>
             <form action="FourthQueryHandler" method="POST">
-                <p><b>Вывести информацию о самой древней национальности,
+                <p><b>Вывести информацию о самой древней народности,
                         проживающей на территории заданного города:</b></p>
                 <input type="text" placeholder="Город" name="city"/>
                 <input type="submit" value="Запрос"/>

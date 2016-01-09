@@ -1,3 +1,5 @@
+<%@page import="com.example.model.FourthObj"%>
+<%@page import="com.example.model.ThirdObj"%>
 <%@page import="com.example.model.SecondObj"%>
 <%@page import="com.example.model.FirstObj"%>
 <%@ page import="java.util.*" %>
@@ -20,6 +22,20 @@
         if(second!=null){
             for(SecondObj data : second){  
                 out.println("<br/>" + data.getCity()+ " " + data.getYear()+ " " + data.getArea() + " " + data.getNationality());  
+            }  
+        }
+        
+        List<ThirdObj> third = (List<ThirdObj>) request.getAttribute("third");
+        if(third!=null){
+            for(ThirdObj data : third){  
+                out.println("<br/>" + data.getCity()+ " " + data.getYear()+ " " + data.getArea() + " " + data.getPopulation());  
+            }  
+        }
+        
+        List<FourthObj> fourth = (List<FourthObj>) request.getAttribute("fourth");
+        if(fourth!=null){
+            for(FourthObj data : fourth){  
+                out.println("<br/>" + data.getNationality() + " " + data.getIncipience());  
             }  
         }
         

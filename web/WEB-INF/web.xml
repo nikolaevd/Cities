@@ -8,6 +8,14 @@
         <servlet-name>SecondQueryHandler</servlet-name>
         <servlet-class>com.example.conroller.SecondQueryHandler</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ThirdQueryHandler</servlet-name>
+        <servlet-class>com.example.conroller.ThirdQueryHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FourthQueryHandler</servlet-name>
+        <servlet-class>com.example.conroller.FourthQueryHandler</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FirstQueryHandler</servlet-name>
         <url-pattern>/FirstQueryHandler</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>SecondQueryHandler</servlet-name>
         <url-pattern>/SecondQueryHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ThirdQueryHandler</servlet-name>
+        <url-pattern>/ThirdQueryHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FourthQueryHandler</servlet-name>
+        <url-pattern>/FourthQueryHandler</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
