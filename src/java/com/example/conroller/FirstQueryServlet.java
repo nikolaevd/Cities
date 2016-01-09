@@ -18,6 +18,23 @@ public class FirstQueryServlet extends HttpServlet {
             throws ServletException, IOException {
 
         //FirstQuery firstQuery = new FirstQuery();
+        request.setCharacterEncoding("UTF-8"); 
+        
+        List result = FirstQuery.getData(request.getParameter("city"), request.getParameter("language"));
+        
+        request.setAttribute("styles", result);
+        RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+        view.forward(request, response); 
+        
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        
         List result = FirstQuery.getData(request.getParameter("city"), request.getParameter("language"));
         
         request.setAttribute("styles", result);

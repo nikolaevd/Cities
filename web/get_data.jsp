@@ -8,7 +8,7 @@
     </head>
     <body>
         <div>
-            <form action="FirstQueryServlet" method="GET">
+            <form action="FirstQueryServlet" method="POST">
                 <p><b>Вывести информацию о жителях заданного города,
                         говорящих на заданном языке:</b></p>
                 <input type="text" placeholder="Город" name="city"/>
