@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Git/Cities/web/set_data.jsp</file>
-            <file>file:/C:/Git/Cities/src/java/com/example/model/FourthQuery.java</file>
-            <file>file:/C:/Git/Cities/src/java/com/example/model/SecondObj.java</file>
-            <file>file:/C:/Git/Cities/src/java/com/example/model/SecondQuery.java</file>
+            <file>file:/C:/Git/Cities/src/java/com/example/model/FirstQuery.java</file>
             <file>file:/C:/Git/Cities/web/result.jsp</file>
-            <file>file:/C:/Git/Cities/src/java/com/example/model/FourthObj.java</file>
-            <file>file:/C:/Git/Cities/src/java/com/example/model/ThirdQuery.java</file>
-            <file>file:/C:/Git/Cities/src/java/com/example/model/ThirdObj.java</file>
+            <file>file:/C:/Git/Cities/src/java/com/example/model/CitiesDB.java</file>
+            <file>file:/C:/Git/Cities/src/java/com/example/conroller/FirstQueryHandler.java</file>
         </group>
     </open-files>
 </project-private>
