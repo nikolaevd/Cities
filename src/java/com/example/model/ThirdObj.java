@@ -6,7 +6,6 @@ public class ThirdObj {
     private String city;
     private int year;
     private int area;
-    private int population;
 
     public void setCity(String city) {
         this.city = city;
@@ -20,10 +19,6 @@ public class ThirdObj {
         this.area = area;
     }
 
-    public void setPopulation(int population) {
-        this.population = population;
-    }
-
     public String getCity() {
         return city;
     }
@@ -34,10 +29,6 @@ public class ThirdObj {
 
     public int getArea() {
         return area;
-    }
-
-    public int getPopulation() {
-        return population;
     }
     
 }

@@ -6,7 +6,6 @@ public class SecondObj {
     private String city;
     private int year;
     private int area;
-    private String nationality;
 
     public void setCity(String city) {
         this.city = city;
@@ -20,10 +19,6 @@ public class SecondObj {
         this.area = area;
     }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
     public String getCity() {
         return city;
     }
@@ -34,10 +29,6 @@ public class SecondObj {
 
     public int getArea() {
         return area;
-    }
-
-    public String getNationality() {
-        return nationality;
     }
     
 }

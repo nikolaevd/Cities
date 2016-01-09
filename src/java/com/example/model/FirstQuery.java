@@ -15,7 +15,7 @@ public class FirstQuery{
         try{
             connection = CitiesDB.getConnection();
             
-            String sql = "SELECT c.city, n.nationality, p.population, l.language\n" +
+            String sql = "SELECT c.city, n.nationality, p.population\n" +
             "FROM nationality n\n" +
                 "JOIN population p ON n.id = p.nationality_id\n" +
                 "JOIN cities c ON c.id = p.city_id\n" +
@@ -29,7 +29,6 @@ public class FirstQuery{
             while(resultSet.next()){
                 FirstObj data = new FirstObj();
                 data.setCity(resultSet.getString("city"));
-                data.setLanguage(resultSet.getString("language"));
                 data.setNationality(resultSet.getString("nationality"));
                 data.setPopulation(resultSet.getInt("population"));
                 dataList.add(data);

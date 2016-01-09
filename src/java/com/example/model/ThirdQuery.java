@@ -19,7 +19,7 @@ public class ThirdQuery {
         try{
             connection = CitiesDB.getConnection();
             
-            String sql = "SELECT c.city, c.year, c.area, SUM(p.population) as population \n" +
+            String sql = "SELECT c.city, c.year, c.area\n" +
                 "FROM population p\n" +
                     "JOIN nationality n ON n.id = p.nationality_id\n" +
                     "JOIN cities c ON c.id = p.city_id\n" +
@@ -34,7 +34,6 @@ public class ThirdQuery {
                 data.setCity(resultSet.getString("city"));
                 data.setYear(resultSet.getInt("year"));
                 data.setArea(resultSet.getInt("area"));
-                data.setArea(resultSet.getInt("population"));
                 dataList.add(data);
             }
             

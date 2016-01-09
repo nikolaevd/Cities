@@ -19,7 +19,7 @@ public class FourthQuery {
         try{
             connection = CitiesDB.getConnection();
             
-            String sql = "SELECT n.nationality, n.incipience\n" +
+            String sql = "SELECT n.nationality, n.incipience, p.population\n" +
                 "FROM nationality n\n" +
                     "JOIN population p ON n.id = p.nationality_id\n" +
                     "JOIN cities c ON c.id = p.city_id\n" +
@@ -32,6 +32,7 @@ public class FourthQuery {
                 FourthObj data = new FourthObj();
                 data.setNationality(resultSet.getString("nationality"));
                 data.setIncipience(resultSet.getInt("incipience"));
+                data.setPopulation(resultSet.getInt("population"));
                 dataList.add(data);
             }
             

@@ -16,7 +16,7 @@ public class SecondQuery {
         try{
             connection = CitiesDB.getConnection();
             
-            String sql = "SELECT c.city, c.year, c.area, n.nationality\n" +
+            String sql = "SELECT c.city, c.year, c.area\n" +
                 "FROM cities c\n" +
                     "JOIN population p ON c.id = p.city_id\n" +
                     "JOIN nationality n ON n.id = p.nationality_id\n" +
@@ -30,7 +30,6 @@ public class SecondQuery {
                 data.setCity(resultSet.getString("city"));
                 data.setYear(resultSet.getInt("year"));
                 data.setArea(resultSet.getInt("area"));
-                data.setNationality(resultSet.getString("nationality"));
                 dataList.add(data);
             }
             
