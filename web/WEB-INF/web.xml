@@ -24,6 +24,18 @@
         <servlet-name>SecondSetHandler</servlet-name>
         <servlet-class>com.example.conroller.set.SecondSetHandler</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ThirdSetHandler</servlet-name>
+        <servlet-class>com.example.conroller.set.ThirdSetHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FourthSetHandler</servlet-name>
+        <servlet-class>com.example.conroller.set.FourthSetHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FifthSetHandler</servlet-name>
+        <servlet-class>com.example.conroller.set.FifthSetHandler</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FirstQueryHandler</servlet-name>
         <url-pattern>/FirstQueryHandler</url-pattern>
@@ -47,6 +59,18 @@
     <servlet-mapping>
         <servlet-name>SecondSetHandler</servlet-name>
         <url-pattern>/SecondSetHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ThirdSetHandler</servlet-name>
+        <url-pattern>/ThirdSetHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FourthSetHandler</servlet-name>
+        <url-pattern>/FourthSetHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FifthSetHandler</servlet-name>
+        <url-pattern>/FifthSetHandler</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

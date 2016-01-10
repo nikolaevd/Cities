@@ -30,11 +30,11 @@ CREATE TABLE nationality(
 WITH ( OIDS=FALSE );
 ALTER TABLE nationality OWNER TO postgres;
 
-INSERT INTO nationality (id, nationality, incipience) VALUES (0, 'русские', '9');
-INSERT INTO nationality (id, nationality, incipience) VALUES (1, 'татары', '6');
-INSERT INTO nationality (id, nationality, incipience) VALUES (2, 'украинцы', '9');
-INSERT INTO nationality (id, nationality, incipience) VALUES (3, 'армяне', '13');
-INSERT INTO nationality (id, nationality, incipience) VALUES (4, 'молдаване', '14');
+INSERT INTO nationality (id, nationality, incipience) VALUES (0, 'русские', 9);
+INSERT INTO nationality (id, nationality, incipience) VALUES (1, 'татары', 6);
+INSERT INTO nationality (id, nationality, incipience) VALUES (2, 'украинцы', 9);
+INSERT INTO nationality (id, nationality, incipience) VALUES (3, 'армяне', 13);
+INSERT INTO nationality (id, nationality, incipience) VALUES (4, 'молдаване', 14);
 
 ----------------------------------------------------
 -- Table: languages

@@ -36,9 +36,54 @@
             }  
         }
         
-        String firstSet = (String) request.getAttribute("firstSet");
+        Integer firstSet = (Integer) request.getAttribute("firstSet");
         if(firstSet!=null){
-            out.println("Данные успешно добавлены в базу.");
+            if(firstSet == 1){
+                out.println("Данные успешно добавлены в базу.");
+            }
+            else{
+                out.println("Не удалось добавить данные...");
+            }  
+        }
+        
+        Integer secondSet = (Integer) request.getAttribute("secondSet");
+        if(secondSet!=null){
+            if(secondSet == 1){
+                out.println("Данные успешно добавлены в базу.");
+            }
+            else{
+                out.println("Не удалось добавить данные...");
+            }  
+        }
+        
+        Integer thirdSet = (Integer) request.getAttribute("thirdSet");
+        if(thirdSet!=null){
+            if(thirdSet == 1){
+                out.println("Данные успешно добавлены в базу.");
+            }
+            else{
+                out.println("Не удалось добавить данные...");
+            }  
+        }
+        
+        Integer fourthSet = (Integer) request.getAttribute("fourthSet");
+        if(fourthSet!=null){
+            if(fourthSet == 1){
+                out.println("Данные успешно добавлены в базу.");
+            }
+            else{
+                out.println("Не удалось добавить данные...");
+            }  
+        }
+        
+        Integer fifthSet = (Integer) request.getAttribute("fifthSet");
+        if(fifthSet!=null){
+            if(fifthSet == 1){
+                out.println("Данные успешно добавлены в базу.");
+            }
+            else{
+                out.println("Не удалось добавить данные...");
+            }  
         }
         
         %>

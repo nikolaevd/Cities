@@ -4,9 +4,9 @@ package com.example.model.set;
 import com.example.model.CitiesDB;
 import java.sql.*;
 
-public class FirstSet {
+public class SecondSet {
     
-    public static int setData(String id, String city, String year, String area){
+    public static int setData(String id, String nationality, String incipience){
         
         Connection connection = null;
         Statement statement = null;
@@ -14,8 +14,8 @@ public class FirstSet {
         try{
             connection = CitiesDB.getConnection();
             
-            String sql = "INSERT INTO cities (id, city, year, area) VALUES (\n" +
-                Integer.parseInt(id) + ", '" + city + "', " + Integer.parseInt(year) + ", " + Integer.parseInt(area) + ")";
+            String sql = "INSERT INTO nationality (id, nationality, incipience)\n " +
+                    " VALUES (" + Integer.parseInt(id) + ", '" + nationality + "', " + incipience + ");";
             
             statement = connection.createStatement();
             statement.execute(sql);

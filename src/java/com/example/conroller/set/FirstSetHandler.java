@@ -18,9 +18,9 @@ public class FirstSetHandler extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         
-        FirstSet.setData(request.getParameter("id"), request.getParameter("city"), request.getParameter("year"), request.getParameter("area"));
+        int firstSet = FirstSet.setData(request.getParameter("id"), request.getParameter("city"), request.getParameter("year"), request.getParameter("area"));
         
-        request.setAttribute("firstSet", "true");
+        request.setAttribute("firstSet", firstSet);
         RequestDispatcher view = request.getRequestDispatcher("result.jsp");
         view.forward(request, response);    
     }
