@@ -1,17 +1,16 @@
-package com.example.conroller;
 
-import com.example.model.*;
-import java.util.List;
+package com.example.conroller.qet;
+
+import com.example.model.get.SecondQuery;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-public class FirstQueryHandler extends HttpServlet {
+public class SecondQueryHandler extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -20,12 +19,11 @@ public class FirstQueryHandler extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         
-        List result = FirstQuery.getData(request.getParameter("city"), request.getParameter("language"));
+        List result = SecondQuery.getData(request.getParameter("nationality"));
         
-        request.setAttribute("first", result);
+        request.setAttribute("second", result);
         RequestDispatcher view = request.getRequestDispatcher("result.jsp");
         view.forward(request, response); 
-        
     }
-
+    
 }

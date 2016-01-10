@@ -1,5 +1,5 @@
 
-package com.example.model;
+package com.example.model.get;
 
 public class FourthObj {
  

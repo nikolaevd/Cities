@@ -8,7 +8,7 @@ public class CitiesDB {
     static final String USER = "postgres";
     static final String PASS = "Iqex1234";
     
-    public static Connection getConnection() throws SQLException, Exception {
+    public static Connection getConnection() throws SQLException, ClassNotFoundException {
         
         String driverName = "org.postgresql.Driver";
         Class.forName(driverName);  

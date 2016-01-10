@@ -1,5 +1,6 @@
-package com.example.model;
+package com.example.model.get;
 
+import com.example.model.CitiesDB;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +17,12 @@ public class FirstQuery{
             connection = CitiesDB.getConnection();
             
             String sql = "SELECT c.city, n.nationality, p.population\n" +
-            "FROM nationality n\n" +
-                "JOIN population p ON n.id = p.nationality_id\n" +
-                "JOIN cities c ON c.id = p.city_id\n" +
-                "JOIN national_languages nl ON n.id = nl.nationality_id\n" +
-                "JOIN languages l ON l.id = nl.language_id\n" +
-            "WHERE c.city = '" + city + "' AND l.language = '" + language + "'";
+                "FROM nationality n\n" +
+                    "JOIN population p ON n.id = p.nationality_id\n" +
+                    "JOIN cities c ON c.id = p.city_id\n" +
+                    "JOIN national_languages nl ON n.id = nl.nationality_id\n" +
+                    "JOIN languages l ON l.id = nl.language_id\n" +
+                "WHERE c.city = '" + city + "' AND l.language = '" + language + "'";
             
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
@@ -42,7 +43,7 @@ public class FirstQuery{
         catch(SQLException e){
             e.printStackTrace();
         }
-        catch(Exception e){
+        catch(ClassNotFoundException e){
             e.printStackTrace();
         }
     

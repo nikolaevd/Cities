@@ -1,16 +1,17 @@
+package com.example.conroller.qet;
 
-package com.example.conroller;
-
-import com.example.model.FourthQuery;
-import java.io.IOException;
+import com.example.model.get.FirstQuery;
 import java.util.List;
+import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FourthQueryHandler extends HttpServlet {
+
+
+public class FirstQueryHandler extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -19,9 +20,9 @@ public class FourthQueryHandler extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         
-        List result = FourthQuery.getData(request.getParameter("city"));
+        List result = FirstQuery.getData(request.getParameter("city"), request.getParameter("language"));
         
-        request.setAttribute("fourth", result);
+        request.setAttribute("first", result);
         RequestDispatcher view = request.getRequestDispatcher("result.jsp");
         view.forward(request, response); 
         

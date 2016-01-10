@@ -2,19 +2,27 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>FirstQueryHandler</servlet-name>
-        <servlet-class>com.example.conroller.FirstQueryHandler</servlet-class>
+        <servlet-class>com.example.conroller.qet.FirstQueryHandler</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SecondQueryHandler</servlet-name>
-        <servlet-class>com.example.conroller.SecondQueryHandler</servlet-class>
+        <servlet-class>com.example.conroller.qet.SecondQueryHandler</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ThirdQueryHandler</servlet-name>
-        <servlet-class>com.example.conroller.ThirdQueryHandler</servlet-class>
+        <servlet-class>com.example.conroller.qet.ThirdQueryHandler</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FourthQueryHandler</servlet-name>
-        <servlet-class>com.example.conroller.FourthQueryHandler</servlet-class>
+        <servlet-class>com.example.conroller.qet.FourthQueryHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FirstSetHandler</servlet-name>
+        <servlet-class>com.example.conroller.set.FirstSetHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SecondSetHandler</servlet-name>
+        <servlet-class>com.example.conroller.set.SecondSetHandler</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FirstQueryHandler</servlet-name>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>FourthQueryHandler</servlet-name>
         <url-pattern>/FourthQueryHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FirstSetHandler</servlet-name>
+        <url-pattern>/FirstSetHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecondSetHandler</servlet-name>
+        <url-pattern>/SecondSetHandler</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

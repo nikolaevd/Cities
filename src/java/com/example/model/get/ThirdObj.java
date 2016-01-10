@@ -1,7 +1,7 @@
 
-package com.example.model;
+package com.example.model.get;
 
-public class SecondObj {
+public class ThirdObj {
     
     private String city;
     private int year;

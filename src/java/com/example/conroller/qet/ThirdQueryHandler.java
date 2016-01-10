@@ -1,7 +1,7 @@
 
-package com.example.conroller;
+package com.example.conroller.qet;
 
-import com.example.model.SecondQuery;
+import com.example.model.get.ThirdQuery;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SecondQueryHandler extends HttpServlet {
+public class ThirdQueryHandler extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -19,11 +19,12 @@ public class SecondQueryHandler extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         
-        List result = SecondQuery.getData(request.getParameter("nationality"));
+        List result = ThirdQuery.getData(request.getParameter("population"));
         
-        request.setAttribute("second", result);
+        request.setAttribute("third", result);
         RequestDispatcher view = request.getRequestDispatcher("result.jsp");
         view.forward(request, response); 
+
     }
-    
+
 }

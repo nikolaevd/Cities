@@ -1,6 +1,7 @@
 
-package com.example.model;
+package com.example.model.get;
 
+import com.example.model.CitiesDB;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,7 +45,7 @@ public class FourthQuery {
         catch(SQLException e){
             e.printStackTrace();
         }
-        catch(Exception e){
+        catch(ClassNotFoundException e){
             e.printStackTrace();
         }
     

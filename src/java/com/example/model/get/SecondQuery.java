@@ -1,36 +1,33 @@
 
-package com.example.model;
+package com.example.model.get;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import com.example.model.CitiesDB;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThirdQuery {
+public class SecondQuery {
     
-    public static List<ThirdObj> getData(String population){
+    public static List<SecondObj> getData(String nationality){
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-        List<ThirdObj> dataList = new ArrayList<>();
+        List<SecondObj> dataList = new ArrayList<>();
          
         try{
             connection = CitiesDB.getConnection();
             
             String sql = "SELECT c.city, c.year, c.area\n" +
-                "FROM population p\n" +
+                "FROM cities c\n" +
+                    "JOIN population p ON c.id = p.city_id\n" +
                     "JOIN nationality n ON n.id = p.nationality_id\n" +
-                    "JOIN cities c ON c.id = p.city_id\n" +
-                "GROUP BY c.city, c.year, c.area\n" +
-                    "HAVING SUM(p.population) > " + Integer.parseInt(population);
+                "WHERE n.nationality = '" + nationality + "'";
             
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
             
             while(resultSet.next()){
-                ThirdObj data = new ThirdObj();
+                SecondObj data = new SecondObj();
                 data.setCity(resultSet.getString("city"));
                 data.setYear(resultSet.getInt("year"));
                 data.setArea(resultSet.getInt("area"));
@@ -45,11 +42,10 @@ public class ThirdQuery {
         catch(SQLException e){
             e.printStackTrace();
         }
-        catch(Exception e){
+        catch(ClassNotFoundException e){
             e.printStackTrace();
         }
     
         return dataList;
     }
-     
 }
