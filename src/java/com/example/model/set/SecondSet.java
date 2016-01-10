@@ -14,8 +14,8 @@ public class SecondSet {
         try{
             connection = CitiesDB.getConnection();
             
-            String sql = "INSERT INTO nationality (id, nationality, incipience)\n " +
-                    " VALUES (" + Integer.parseInt(id) + ", '" + nationality + "', " + incipience + ");";
+            String sql = "INSERT INTO nationality (id, nationality, incipience)\n" +
+                    "VALUES (" + Integer.parseInt(id) + ", '" + nationality + "', " + incipience + ");";
             
             statement = connection.createStatement();
             statement.execute(sql);
