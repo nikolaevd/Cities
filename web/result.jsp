@@ -10,30 +10,50 @@
         
         List<FirstObj> first = (List<FirstObj>) request.getAttribute("first");
         if(first!=null){
-            for(FirstObj data : first){  
-                out.println("<br/><b>Город:</b> " + data.getCity()+ "; <b>национальность:</b> " + data.getNationality() + "; <b>население:</b> " + data.getPopulation());  
-            }  
+            if(first.size() > 0){
+                for(FirstObj data : first){  
+                    out.println("<br/><b>Город:</b> " + data.getCity()+ "; <b>национальность:</b> " + data.getNationality() + "; <b>население:</b> " + data.getPopulation());  
+                }  
+            }
+            else{
+                out.println("Не удалось выполнить запрос. Убедитесь в корректности вводимых данных.");
+            }            
         }
         
         List<SecondObj> second = (List<SecondObj>) request.getAttribute("second");
         if(second!=null){
-            for(SecondObj data : second){  
-                out.println("<br/><b>Город:</b> " + data.getCity()+ "; <b>год основания:</b> " + data.getYear()+ "; <b>площадь кв.км.:</b> " + data.getArea());  
-            }  
+            if(second.size() > 0){
+                for(SecondObj data : second){  
+                    out.println("<br/><b>Город:</b> " + data.getCity()+ "; <b>год основания:</b> " + data.getYear()+ "; <b>площадь кв.км.:</b> " + data.getArea());  
+                }  
+            }
+            else{
+                out.println("Не удалось выполнить запрос. Убедитесь в корректности вводимых данных.");
+            }      
         }
         
         List<ThirdObj> third = (List<ThirdObj>) request.getAttribute("third");
         if(third!=null){
-            for(ThirdObj data : third){  
-                out.println("<br/><b>Город:</b> " + data.getCity()+ "; <b>год основания:</b> " + data.getYear()+ "; <b>площадь кв.км.:</b> " + data.getArea());  
-            }  
+            if(third.size() > 0){
+                for(ThirdObj data : third){  
+                    out.println("<br/><b>Город:</b> " + data.getCity()+ "; <b>год основания:</b> " + data.getYear()+ "; <b>площадь кв.км.:</b> " + data.getArea());  
+                }  
+            }
+            else{
+                out.println("Не удалось выполнить запрос. Убедитесь в корректности вводимых данных.");
+            }
         }
         
         List<FourthObj> fourth = (List<FourthObj>) request.getAttribute("fourth");
         if(fourth!=null){
-            for(FourthObj data : fourth){  
-                out.println("<br/><b>национальность:</b> " + data.getNationality() + "; <b>век зарождения государственности:</b> " + data.getIncipience() + "; <b>людей проживает в заданном городе:</b> " + data.getPopulation());  
-            }  
+            if(fourth.size() > 0){
+                for(FourthObj data : fourth){  
+                    out.println("<br/><b>национальность:</b> " + data.getNationality() + "; <b>век зарождения государственности:</b> " + data.getIncipience() + "; <b>людей проживает в заданном городе:</b> " + data.getPopulation());  
+                }  
+            }
+            else{
+                out.println("Не удалось выполнить запрос. Убедитесь в корректности вводимых данных.");
+            }
         }
         
         Integer firstSet = (Integer) request.getAttribute("firstSet");
@@ -42,7 +62,7 @@
                 out.println("Данные успешно добавлены в базу.");
             }
             else{
-                out.println("Не удалось добавить данные...");
+                out.println("Не удалось добавить данные. Убедитесь в корректности вводимых данных.");
             }  
         }
         
@@ -52,7 +72,7 @@
                 out.println("Данные успешно добавлены в базу.");
             }
             else{
-                out.println("Не удалось добавить данные...");
+                out.println("Не удалось добавить данные. Убедитесь в корректности вводимых данных.");
             }  
         }
         
@@ -62,7 +82,7 @@
                 out.println("Данные успешно добавлены в базу.");
             }
             else{
-                out.println("Не удалось добавить данные...");
+                out.println("Не удалось добавить данные. Убедитесь в корректности вводимых данных.");
             }  
         }
         
@@ -72,7 +92,7 @@
                 out.println("Данные успешно добавлены в базу.");
             }
             else{
-                out.println("Не удалось добавить данные...");
+                out.println("Не удалось добавить данные. Убедитесь в корректности вводимых данных.");
             }  
         }
         
@@ -82,7 +102,7 @@
                 out.println("Данные успешно добавлены в базу.");
             }
             else{
-                out.println("Не удалось добавить данные...");
+                out.println("Не удалось добавить данные. Убедитесь в корректности вводимых данных.");
             }  
         }
         
