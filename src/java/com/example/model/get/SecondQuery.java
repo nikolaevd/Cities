@@ -45,6 +45,9 @@ public class SecondQuery {
         catch(ClassNotFoundException e){
             e.printStackTrace();
         }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     
         return dataList;
     }

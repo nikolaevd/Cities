@@ -46,6 +46,9 @@ public class FirstQuery{
         catch(ClassNotFoundException e){
             e.printStackTrace();
         }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     
         return dataList;
     }
